@@ -18,19 +18,19 @@
 }
 
 html, body {
-    height: 100%;
-    overflow-x: hidden;
+    width: 100%;
+}
+
+main{
+    margin: 0 auto;
 }
 
 body {
     background-color: var(--bg-color);
     font-family: 'IBM Plex Sans', sans-serif;
     color: var(--white);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    width: 1440px;
 }
+
 
 /* ======================== HEADER ======================== */
 .container {
@@ -45,13 +45,11 @@ body {
 
 /* Header */
 .header {
-    text-align: left;
+    text-align: center;
     padding: 20px 0;
-    width: 100%;
     flex-shrink: 0;
     margin-top: 10px;
     margin-bottom: 80px;
-    margin-left: 60px;
 }
 
 .logo {
@@ -105,17 +103,23 @@ body {
 
 .top-section {
     width: 1323px;
-    height: 835px;
-    margin: 0 auto;
     display: flex;
     gap: 65px;
+    transform-origin: top center;
 }
+
+.top-section-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
 
 /* ============ SLIDERS ============ */
 
 .sliders-box {
     width: 430px;
-    height: 835px;
     border: 2px solid var(--white);
     padding: 25px;
     display: flex;
@@ -238,28 +242,29 @@ body {
 
 .svg-layer {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 835px;
-    height: 835px;
+    inset: 0;
     pointer-events: none;
     z-index: 5;
 }
 
 .svgtext {
-    fill: var(--white);
+    fill: #fff;
     font-size: 40px;
     font-family: "IBM Plex Sans", sans-serif;
     letter-spacing: 1px;
+    text-anchor: middle;
     dominant-baseline: middle;
-    text-anchor: start;
 }
+
+.svgtext-center {
+    text-anchor: middle;
+}
+
 
 /* ============ LINES AFTER BLOCK ============ */
 
 /* Верхняя — сплошная с выступом вправо 55px */
 .line-solid {
-    width: 820px;
     border-top: 2px solid #ffffff;
     margin: 40px 10px 50px 618px;
 }
@@ -282,16 +287,14 @@ body {
 
 /* Заголовок 1286x76, по центру */
 .shape-title-wrapper {
-    width: 1286px;
-    height: 76px;
+    max-width: 1286px;
+    width: 100%;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0 16px;
 }
 
 .shape-title {
-    font-size: 72px;
+    font-size: clamp(32px, 6vw, 72px);
     font-weight: 400;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -301,7 +304,7 @@ body {
 
 /* Линии во всю ширину экрана */
 .shape-line {
-    width: 100vw;
+    width: 100%;
     height: 2px;
     background-color: var(--white);
     position: relative;
@@ -319,13 +322,13 @@ body {
 
 /* Бегущая строка с облаками: ширина экрана, высота 280px */
 .cloud-marquee {
-    width: 100vw;
+    width: 100%;
+    left: 0;
+    transform: none;
     height: 280px;
     background-color: #1E1F21;
     overflow: hidden;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     margin-top: 60px;
     margin-bottom: 70px;
 }
@@ -351,17 +354,18 @@ body {
 
 .texture-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: clamp(30px, 6vw, 100px);
     width: 100%;
     margin: 15px auto;
 }
 
 .texture-item {
     position: relative;
-    width: 380px;
-    height: 250px;
+    width: clamp(240px, 30vw, 380px);
+    aspect-ratio: 380 / 250;
     overflow: hidden;
 }
 
@@ -444,19 +448,20 @@ body {
 
 .manufacture-inner {
     max-width: 1323px;
+    width: 100%;
     margin: 0 auto;
 }
 
 /* ==== Заголовок ==== */
 
 .manufacture-title {
-    font-size: 95px;
+    font-size: clamp(42px, 7vw, 95px);
+    margin-left: clamp(0px, 3vw, 35px);
     font-weight: 400;
     letter-spacing: 0.05em;
     display: flex;
     align-items: flex-end;
     gap: 22px;
-    margin-left: 35px;
     margin-bottom: 80px;
 }
 
@@ -487,13 +492,15 @@ body {
 /* ==== Layout ==== */
 
 .manufacture-layout {
-    display: flex;
-    justify-content: space-between;
-    gap: 35px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: clamp(20px, 4vw, 35px);
 }
 
-.manufacture-left  { width: 570px; }
-.manufacture-right { width: 715px; }
+.manufacture-left,
+.manufacture-right {
+    width: 100%;
+}
 
 /* ==== Frames ==== */
 
@@ -557,39 +564,58 @@ body {
 .wave-circle {
     width: 240px;
     height: 240px;
-    border: 3px solid white;
+    border: 3px solid #fff;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
-    background: #1f1f1f;
+    background: #1E1F21;
 }
 
-/* Обновлённая форма волны */
-.wave {
-    position: absolute;
-    bottom: 25px; /* ← волна поднята выше, НЕ касается низа круга */
+.wave-svg {
     width: 100%;
-    height: 45%;
-    background: #7f97b3;
-    border-radius: 20% 20% 30% 30%;
-    animation: waveMove 4s ease-in-out infinite;
-    opacity: 0.9;
+    height: 100%;
+    display: block;
 }
 
-/* Второй слой для эффекта перелива */
-.wave2 {
-    animation-duration: 6s;
-    opacity: 0.65;
-    transform: translateX(-25%);
+.wave-path {
+    fill: #7F97B3;
 }
 
-@keyframes waveMove {
-    0%   { transform: translateX(0) translateY(0); }
-    50%  { transform: translateX(-50%) translateY(8px); }
-    100% { transform: translateX(0) translateY(0); }
+.wave-back {
+    opacity: 0.45;
+    animation: waveBack 5.5s ease-in-out infinite;
+}
+
+.wave-front {
+    opacity: 0.85;
+    animation: waveFront 3.5s ease-in-out infinite;
 }
 
 
+
+@keyframes waveFront {
+    0% {
+        d: path("M0 150 C 40 120, 80 180, 120 150 C 160 120, 200 180, 240 150 L 240 240 L 0 240 Z");
+    }
+    50% {
+        d: path("M0 135 C 40 190, 80 110, 120 135 C 160 190, 200 110, 240 135 L 240 240 L 0 240 Z");
+    }
+    100% {
+        d: path("M0 150 C 40 120, 80 180, 120 150 C 160 120, 200 180, 240 150 L 240 240 L 0 240 Z");
+    }
+}
+
+@keyframes waveBack {
+    0% {
+        d: path("M0 145 C 40 130, 80 165, 120 145 C 160 130, 200 165, 240 145 L 240 240 L 0 240 Z");
+    }
+    50% {
+        d: path("M0 155 C 40 175, 80 125, 120 155 C 160 175, 200 125, 240 155 L 240 240 L 0 240 Z");
+    }
+    100% {
+        d: path("M0 145 C 40 130, 80 165, 120 145 C 160 130, 200 165, 240 145 L 240 240 L 0 240 Z");
+    }
+}
 
 /* ==== Плавная анимация 3 кадров облака ==== */
 
@@ -662,19 +688,61 @@ body {
 }
 
 /* Основная большая рамка */
-.footer-frame {
-    width: 1323px;
+.footer-frame,
+.footer-grid {
+    max-width: 1323px;
+    width: 100%;
     margin: 0 auto;
-    border: 3px solid #fff;
-    padding: 40px;
-    box-sizing: border-box;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
 }
 
 /* Контейнер облаков */
+
+.circles-box .cloud {
+    width: 225px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+
 .footer-clouds {
     position: relative;
     width: 100%;
     height: 330px;
+}
+
+.footer-clouds .cloud {
+    position: absolute;
+    left: auto;
+    transform: none;
+    z-index: 1;
+    width: 140px;
+    opacity: 0.9;
+}
+
+
+.footer-clouds .cloud-1 {
+    top: 25px;
+    left: 40px;
+}
+
+.footer-clouds .cloud-2 {
+    top: 60px;
+    left: 220px;
+}
+
+.footer-clouds .cloud-3 {
+    top: 30px;
+    left: 420px;
+}
+
+.footer-clouds .cloud-4 {
+    top: 80px;
+    left: 600px;
 }
 
 
@@ -697,15 +765,6 @@ body {
 }
 
 
-/* Нижняя часть — две колонки */
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    width: 1323px;
-    align-items: start;
-    margin: 0 auto;
-}
-
 /* Логотип */
 .logo-img {
     width: 420px;
@@ -717,8 +776,178 @@ body {
 .footer-author {
     text-align: right;
     font-size: 36px;
-    color: white;
     line-height: 1.15;
-    margin-top: 45px;
+    padding-bottom: 24px;
+    margin-top: 110px;
+    align-self: start;
 }
 
+.footer-frame {
+    display: grid;
+    border: 3px solid #fff;
+    margin-bottom: 35px;
+}
+
+.footer-clouds {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+
+.fixed-cloud-box {
+    right: 20px;
+    top: 20px;
+    border: 2px solid #fff;
+}
+
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: flex-end;
+    padding: 0 10px;
+    position: relative;
+}
+
+
+.footer-logo {
+    padding-bottom: 24px;
+}
+
+
+.logo-img {
+    width: 420px;
+    margin: 0;
+    display: block;
+}
+
+
+/*Адаптив*/
+
+
+@media (min-width: 1024px) {
+    main{
+        margin: 0 auto;
+        width: 1440px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .top-section-wrapper {
+        margin-bottom: -660px;
+    }
+
+    .top-section {
+        transform: scale(0.6);
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+
+    .texture-row {
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+
+    .texture-item {
+        width: calc((100% - 40px) / 3);
+        max-width: none;
+    }
+
+    .texture-label {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+
+    .manufacture-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .mf-dots {
+        gap: 16px;
+        margin-bottom: 0;
+    }
+
+
+    .manufacture-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "right"
+            "left";
+        gap: 40px;
+    }
+
+    .manufacture-right {
+        grid-area: right;
+        width: 100%;
+    }
+
+    .manufacture-left {
+        grid-area: left;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .mf-right-frame {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 715 / 995; /* сохраняем пропорцию */
+    }
+
+    .manufacture-left {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .mf-top-frame,
+    .mf-bottom-frame {
+        width: 100%;
+        max-width: 570px;
+        height: 725px;
+        margin-top: 0;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-author {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .logo-img {
+        margin: 0 auto;
+        width: clamp(200px, 60vw, 420px);
+    }
+
+    .line-solid {
+        display: none;
+    }
+
+    .line-dashed {
+        display: none;
+    }
+}
+
+
+@media (max-width: 414px) {
+    .top-section {
+        transform: scale(0.45);
+    }
+}
