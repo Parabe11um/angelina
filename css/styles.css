@@ -187,7 +187,6 @@ body {
     z-index: 1;
 }
 
-/* Внешний круг */
 .c1 {
     width: 829px;
     height: 829px;
@@ -195,7 +194,6 @@ body {
     animation: rotCW 40s linear infinite;
 }
 
-/* Третий круг */
 .c2 {
     width: 670px;
     height: 670px;
@@ -203,7 +201,6 @@ body {
     animation: rotCCW 35s linear infinite;
 }
 
-/* Второй круг */
 .c3 {
     width: 460px;
     height: 460px;
@@ -211,7 +208,6 @@ body {
     animation: rotCW 30s linear infinite;
 }
 
-/* Внутренний круг */
 .c4 {
     width: 300px;
     height: 300px;
@@ -238,7 +234,6 @@ body {
     z-index: 4;
 }
 
-/* ============ SVG TEXT ============ */
 
 .svg-layer {
     position: absolute;
@@ -263,13 +258,11 @@ body {
 
 /* ============ LINES AFTER BLOCK ============ */
 
-/* Верхняя — сплошная с выступом вправо 55px */
 .line-solid {
     border-top: 2px solid #ffffff;
     margin: 40px 10px 50px 618px;
 }
 
-/* Нижняя — пунктирная строго по контейнеру */
 .line-dashed {
     width: 677px;
     border-top: 2px dashed #ffffff;
@@ -285,7 +278,6 @@ body {
     margin-top: 40px;
 }
 
-/* Заголовок 1286x76, по центру */
 .shape-title-wrapper {
     max-width: 1286px;
     width: 100%;
@@ -302,7 +294,6 @@ body {
     color: var(--white);
 }
 
-/* Линии во всю ширину экрана */
 .shape-line {
     width: 100%;
     height: 2px;
@@ -320,7 +311,6 @@ body {
     margin-top: 40px;
 }
 
-/* Бегущая строка с облаками: ширина экрана, высота 280px */
 .cloud-marquee {
     width: 100%;
     left: 0;
@@ -337,7 +327,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 200vw;              /* запас для бесшовной прокрутки */
+    width: 200vw;
     height: 100%;
     background-image: url('/img/cloud_string.png');
     background-repeat: repeat-x;
@@ -350,7 +340,6 @@ body {
     to   { transform: translateX(-50%); }
 }
 
-/* Контейнер для каждой текстуры */
 
 .texture-row {
     display: flex;
@@ -370,7 +359,6 @@ body {
 }
 
 
-/* Каждый кадр-слой */
 .texture-frame {
     position: absolute;
     width: 100%;
@@ -381,11 +369,6 @@ body {
     opacity: 0;
     transition: opacity 1.4s ease-in-out;
 }
-
-/*
-Три независимых анимации, чтобы кадры мягко
-появлялись и исчезали без резких рывков
-*/
 
 .texture-item.animate .frame1 {
     animation: texFade1 7s infinite;
@@ -399,7 +382,7 @@ body {
     animation: texFade3 7s infinite;
 }
 
-/* Кадр 1 → видим 0–30% */
+
 @keyframes texFade1 {
     0%   { opacity: 1; }
     30%  { opacity: 1; }
@@ -407,7 +390,7 @@ body {
     100% { opacity: 0; }
 }
 
-/* Кадр 2 → видим 33–63% */
+
 @keyframes texFade2 {
     0%   { opacity: 0; }
     33%  { opacity: 0; }
@@ -417,7 +400,7 @@ body {
     100% { opacity: 0; }
 }
 
-/* Кадр 3 → видим 66–96% */
+
 @keyframes texFade3 {
     0%   { opacity: 0; }
     66%  { opacity: 0; }
@@ -426,7 +409,6 @@ body {
     100% { opacity: 0; }
 }
 
-/* Текст */
 .texture-label {
     position: absolute;
     top: 55%;
@@ -451,8 +433,6 @@ body {
     width: 100%;
     margin: 0 auto;
 }
-
-/* ==== Заголовок ==== */
 
 .manufacture-title {
     font-size: clamp(42px, 7vw, 95px);
@@ -489,8 +469,6 @@ body {
     70%,100% { opacity: 0; transform: scale(0.5); }
 }
 
-/* ==== Layout ==== */
-
 .manufacture-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
@@ -501,8 +479,6 @@ body {
 .manufacture-right {
     width: 100%;
 }
-
-/* ==== Frames ==== */
 
 .mf-frame {
     border: 3px solid #fff;
@@ -532,8 +508,6 @@ body {
     position: relative;
 }
 
-/* ==== Внешний круг ==== */
-
 .mf-outer-circle {
     width: 240px;
     height: 240px;
@@ -543,8 +517,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-/* ==== Анимируемая фигура ==== */
 
 .mf-inner-morph {
     width: 160px;
@@ -559,7 +531,6 @@ body {
     75%,100% { border-radius: 50%; transform: scale(1); }
 }
 
-/* ==== Волна ==== */
 
 .wave-circle {
     width: 240px;
@@ -617,8 +588,6 @@ body {
     }
 }
 
-/* ==== Плавная анимация 3 кадров облака ==== */
-
 .mf-cloud-fade {
     width: 100%;
     height: 100%;
@@ -631,7 +600,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;    /* картинка вписывается внутрь рамки */
+    object-fit: contain;
     opacity: 0;
     animation: cloudFade 6s infinite;
 }
@@ -648,8 +617,6 @@ body {
     100% { opacity: 0; }
 }
 
-/* ==== Плавная анимация 4 кадров чертежа ==== */
-
 .mf-drawing-fade {
     width: 100%;
     height: 100%;
@@ -662,7 +629,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;      /* было contain */
+    object-fit: cover;
     opacity: 0;
     animation: drawingFade 8s infinite;
 }
@@ -680,14 +647,12 @@ body {
     100% { opacity: 0; }
 }
 
-/* Общая секция */
 .footer-section {
     width: 100%;
     background: #1F1F1F;
 
 }
 
-/* Основная большая рамка */
 .footer-frame,
 .footer-grid {
     max-width: 1323px;
@@ -696,8 +661,6 @@ body {
     grid-template-columns: 1fr auto;
     gap: 20px;
 }
-
-/* Контейнер облаков */
 
 .circles-box .cloud {
     width: 225px;
@@ -745,8 +708,6 @@ body {
     left: 600px;
 }
 
-
-/* Фиксированное голубое облако */
 .fixed-cloud-box {
     position: absolute;
     right: 0;
@@ -764,15 +725,12 @@ body {
     height: auto;
 }
 
-
-/* Логотип */
 .logo-img {
     width: 420px;
     margin-top: -65px;
     margin-left: -35px;
 }
 
-/* Автор */
 .footer-author {
     text-align: right;
     font-size: 36px;
@@ -822,10 +780,6 @@ body {
     margin: 0;
     display: block;
 }
-
-
-/*Адаптив*/
-
 
 @media (min-width: 1024px) {
     main{
@@ -902,7 +856,7 @@ body {
     .mf-right-frame {
         width: 100%;
         height: auto;
-        aspect-ratio: 715 / 995; /* сохраняем пропорцию */
+        aspect-ratio: 715 / 995;
     }
 
     .manufacture-left {

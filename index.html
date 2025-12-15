@@ -13,7 +13,6 @@
 <body>
 
 <main>
-    <!-- ============ HEADER ============ -->
     <header class="header">
         <h1 class="logo">
         <span class="letter-container">
@@ -30,12 +29,9 @@
         </h1>
     </header>
 
-    <!-- ============ MAIN SECTION ============ -->
-
     <section class="top-section-wrapper">
         <section class="top-section">
 
-            <!-- LEFT — SLIDERS -->
             <div class="sliders-box">
                 <div class="slider">
                     <div class="slider-label">40%</div>
@@ -60,23 +56,18 @@
 
             </div>
 
-            <!-- RIGHT — CIRCLES + TEXT -->
             <div class="circles-box">
 
-                <!-- Круги -->
                 <div class="circle c1"></div>
                 <div class="circle c2"></div>
                 <div class="circle c3"></div>
                 <div class="circle c4"></div>
 
-                <!-- Облако -->
                 <img src="img/cloud.png" alt="cloud" class="cloud" />
 
-                <!-- SVG TEXT INSIDE CIRCLES -->
                 <svg class="svg-layer" width="835" height="835" viewBox="0 0 835 835">
 
                     <defs>
-                        <!-- OUTER -->
                         <path id="outerTop"
                               d="
                             M 17.5 417.5
@@ -127,13 +118,8 @@
                         <path id="thirdBottomReverse"
                               d="M417.5,737.5
          A320,320 0 1 0 417.4,737.5" />
-
-
-
-
                     </defs>
 
-                    <!-- OUTER -->
                     <text class="svgtext">
                         <textPath
                                 href="#outerTop"
@@ -144,14 +130,12 @@
                         </textPath>
                     </text>
 
-
                     <text class="svgtext">
                         <textPath href="#outerBottom" startOffset="35%">
                             25%
                         </textPath>
                     </text>
 
-                    <!-- THIRD -->
                     <text class="svgtext svgtext-center">
                         <textPath href="#thirdBottomReverse" startOffset="40%">
                             металлическая пыль
@@ -164,7 +148,6 @@
                         </textPath>
                     </text>
 
-                    <!-- INNER -->
                     <text class="svgtext svgtext-center">
                         <textPath href="#innerLabelCircleReverse" startOffset="20%">
                             100%
@@ -181,31 +164,24 @@
         </section>
     </section>
 
-    <!-- ============ TWO LINES UNDER MAIN SECTION ============ -->
     <div class="line-solid"></div>
     <div class="line-dashed"></div>
 
-    <!-- ==================== ВЫБОР ФОРМЫ И ТЕКСТУРЫ ==================== -->
     <section class="shape-section">
         <div class="shape-title-wrapper">
             <h2 class="shape-title">ВЫБОР ФОРМЫ И ТЕКСТУРЫ</h2>
         </div>
 
-        <!-- линия во всю ширину -->
         <div class="shape-line shape-line-top"></div>
 
-        <!-- бегущая строка с cloud_string по всей ширине, высота 280 -->
         <div class="cloud-marquee">
             <div class="cloud-marquee-inner"></div>
         </div>
 
-        <!-- вторая линия во всю ширину -->
         <div class="shape-line shape-line-bottom"></div>
 
-        <!-- Нижний ряд: три текстуры -->
         <div class="texture-row">
 
-            <!-- ЖЕСТКИЙ -->
             <div class="texture-item animate">
                 <img src="/img/element_1_frame1.png" class="texture-frame frame1">
                 <img src="/img/element_1_frame2.png" class="texture-frame frame2">
@@ -213,7 +189,6 @@
                 <span class="texture-label">ЖЕСТКИЙ</span>
             </div>
 
-            <!-- ГЛАДКИЙ -->
             <div class="texture-item animate">
                 <img src="/img/element_2_frame1.png" class="texture-frame frame1">
                 <img src="/img/element_2_frame2.png" class="texture-frame frame2">
@@ -221,7 +196,6 @@
                 <span class="texture-label">ГЛАДКИЙ</span>
             </div>
 
-            <!-- ПУШИСТЫЙ -->
             <div class="texture-item animate">
                 <img src="/img/element_3_frame1.png" class="texture-frame frame1">
                 <img src="/img/element_3_frame2.png" class="texture-frame frame2">
@@ -246,19 +220,14 @@
 
             <div class="manufacture-layout">
 
-                <!-- Левая колонка -->
                 <div class="manufacture-left">
 
-                    <!-- Верхняя рамка -->
                     <div class="mf-frame mf-top-frame">
 
-                        <!-- Внешний круг 240px -->
                         <div class="mf-outer-circle">
-                            <!-- Морфируемая фигура 160px -->
                             <div class="mf-inner-morph"></div>
                         </div>
 
-                        <!-- Нижний круг с волной -->
                         <div class="wave-circle">
                             <svg class="wave-svg" viewBox="0 0 240 240" preserveAspectRatio="none">
                                 <defs>
@@ -288,7 +257,6 @@
 
                     </div>
 
-                    <!-- Нижняя рамка: 3 кадра облака -->
                     <div class="mf-frame mf-bottom-frame">
                         <div class="mf-cloud-fade">
                             <img src="/img/element_5_frame1.png" class="cf cf-1">
@@ -299,7 +267,6 @@
 
                 </div>
 
-                <!-- Правая колонка -->
                 <div class="manufacture-right">
                     <div class="mf-frame mf-right-frame">
                         <div class="mf-drawing-fade">
