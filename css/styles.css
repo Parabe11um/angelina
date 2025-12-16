@@ -1034,7 +1034,7 @@ body {
     }
 
     .footer-clouds .cloud-2 {
-        top: 20rem;
+        top: 1rem;
         right: 2rem;
     }
 
@@ -1054,7 +1054,7 @@ body {
     }
 
     .cloud-5-wrapper img{
-        width: 200px!important;
+        width: 200px;
     }
 
     .footer-clouds .cloud-6 {
@@ -1085,9 +1085,10 @@ body {
     }
 
     .top-section {
-        transform: scale(0.6);
+        transform: none;
+        width: 100%;
         flex-direction: column-reverse;
-        align-items: center;
+        gap: 32px;
     }
 
 
@@ -1190,7 +1191,7 @@ body {
 @media (max-width: 360px) {
 
     .top-section-wrapper {
-        margin-bottom: -1450px;
+        margin-bottom: -1100px;
     }
 
 
@@ -1198,8 +1199,26 @@ body {
         transform: scale(0.35);
     }
 
-    .sliders-box .slider-track {
-        height: 1200px !important;
+    .sliders-box {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px;
+        margin: 0 auto;
+    }
+
+    .slider {
+        width: 60px;
+    }
+
+    .slider-label {
+        width: 60px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .slider-track {
+        height: 280px;
+        margin-top: 12px;
     }
 
 
@@ -1258,41 +1277,59 @@ body {
     .footer-frame {
         display: flex;
         height: 800px;
+        width: 100%;
     }
 
     .footer-clouds{
         height: 900px;
     }
 
+    .footer-grid{
+        width: 100%;
+    }
+
 
     .cloud-1-wrapper {
-        top: 27rem;
+        top: 20rem;
         left: 2rem;
     }
 
     .footer-clouds .cloud-2 {
-        top: 20rem;
-        right: 2rem;
+        top: 5rem;
+        right: 1rem;
     }
 
     .cloud-3-wrapper {
-        top: 35rem;
+        top: 30rem;
         left: 2rem;
     }
 
     .footer-clouds .cloud-4 {
-        top: 30rem;
-        left: 10rem;
+        top: 18rem;
+        left: 8rem;
     }
 
     .cloud-5-wrapper{
-        top: 45rem;
+        top: 38rem;
         left: 2rem;
     }
 
+    .fixed-cloud-box{
+        width: 40%;
+        height: 15%;
+    }
+
+    .fixed-cloud{
+        width: 100px;
+    }
+
+    .footer-clouds .cloud{
+        width: 100px;
+    }
+
     .footer-clouds .cloud-6 {
-        top: 40rem;
-        left: 10rem;
+        top: 27rem;
+        left: 8rem;
     }
 
     .footer-grid{
