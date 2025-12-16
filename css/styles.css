@@ -863,10 +863,159 @@ body {
     display: block;
 }
 
-@media (min-width: 1024px) {
-    main{
-        margin: 0 auto;
-        width: 1440px;
+@media (max-width: 1024px) {
+    .top-section-wrapper {
+        margin-bottom: -640px;
+    }
+
+
+    .top-section {
+        transform: scale(0.70);
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .sliders-box .slider-track {
+        height: 1200px !important;
+    }
+
+
+    .header {
+        margin-bottom: 24px;
+    }
+
+    .logo {
+        font-size: 42px;
+        letter-spacing: 0.04em;
+    }
+
+    .sliders-box{
+        width: 840px;
+    }
+
+    .shape-title {
+        font-size: 58px;
+    }
+
+    .cloud-marquee {
+        height: 200px;
+    }
+
+    .texture-row{
+        flex-direction: row;
+    }
+
+    .texture-item {
+        width: calc((100% - 40px) / 3.3);
+    }
+
+    .texture-label {
+        font-size: 16px;
+    }
+
+    .manufacture-section{
+        padding:0 1rem;
+    }
+
+    .manufacture-layout {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .manufacture-title{
+        margin: 2rem 0;
+        font-size: 18px;
+        text-align: center;
+        justify-self: center;
+    }
+
+    .manufacture-left {
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    .manufacture-right {
+        justify-items: center;
+    }
+
+    .mf-top-frame{
+        width: 715px;
+    }
+
+    .mf-bottom-frame{
+        height: 300px;
+        width: 715px;
+    }
+
+    .footer-section {
+        margin-top: 3rem;
+    }
+
+    .footer-frame {
+        display: flex;
+        height: 800px;
+        width: 715px;
+    }
+
+    .fixed-cloud-box {
+        left: 20px;
+    }
+
+    .footer-clouds{
+        height: 900px;
+    }
+
+    .footer-clouds .cloud {
+        width: 240px;
+    }
+
+
+    .cloud-1-wrapper {
+        top: 28rem;
+        left: 25rem;
+    }
+
+    .footer-clouds .cloud-2 {
+        top: 20rem;
+        right: 2rem;
+    }
+
+    .cloud-3-wrapper {
+        top: 50rem;
+        left: 2rem;
+    }
+
+    .footer-clouds .cloud-4 {
+        top: 35rem;
+        left: 25rem;
+    }
+
+    .cloud-5-wrapper{
+        top: 15rem;
+        left: 25rem;
+    }
+
+    .cloud-5-wrapper img{
+        width: 200px!important;
+    }
+
+    .footer-clouds .cloud-6 {
+        top: 15rem;
+        left: 2rem;
+    }
+
+    .footer-grid{
+        display: flex;
+        flex-direction: row;
+        width: 715px;
+    }
+
+    .footer-logo img{
+        width: 50%;
+    }
+
+    .footer-author {
+        font-size: 18px;
     }
 
 }
