@@ -14,11 +14,6 @@
     --bg-color: #1E1F21;
     --white: #FFFFFF;
     --blue: #7F96B2;
-    --circle-gap: 10%;
-}
-
-html, body {
-    width: 100%;
 }
 
 main{
@@ -39,7 +34,6 @@ body {
 .header {
     text-align: center;
     padding: 20px 0;
-    flex-shrink: 0;
     margin-top: 10px;
     margin-bottom: 80px;
 }
@@ -1242,7 +1236,6 @@ body {
     }
 
     .cloud-marquee{
-        .
         height: 120px;
     }
 
